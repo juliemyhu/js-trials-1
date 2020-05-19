@@ -168,7 +168,7 @@ function truncate(string) {
 // > hasBalancedParens('()');
 // true
 //
-// > hasBalancedParens('((This) (is) (good))');
+// > has_balanced_parens('((This) (is) (good))')
 // true
 //
 // > hasBalancedParens('(Oh no!)(');
@@ -188,7 +188,8 @@ function hasBalancedParens(string) {
     }
   }
 
-  return parens < 0;
+  return parens ==
+  0;
 }
 
 

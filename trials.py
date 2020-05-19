@@ -157,7 +157,7 @@ def has_balanced_parens(string):
         if parens < 0:
             return False
 
-    return parens < 0;
+    return parens == 0;
 
 
 def compress(string):
