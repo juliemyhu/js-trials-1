@@ -67,34 +67,125 @@ def get_range(start, stop):
     Ex: 
     >>> get_range(0, 5)
     [0, 1, 2, 3, 4]
-    
+
     """
     nums = []
     for num in range (start, stop):
         nums.append(num)
     return nums
 
-
-
 def censor_vowels(word):
-    pass  # TODO: replace this line with your code
+    """
+    Ex.
+    >>> censor_vowels('hello world')
+    'h*ell*o w*orld'
 
+    """
+
+    chars = []
+    for letter in word:
+        if letter in 'aeiou':
+            chars.append('*')
+        chars.append(letter)
+
+    return "".join(chars)
 
 def snake_to_camel(string):
-    pass  # TODO: replace this line with your code
+
+    """
+    Ex.
+    >>> snake_to_camel('hello_world')
+    'HelloWorld'
+    """
+    camel_case = []
+
+    for word in string.split('_'):
+        camel_case.append(f'{word[0].upper()}{word[1:]}')
+
+    return "".join(camel_case)
 
 
 def longest_word_length(words):
-    pass  # TODO: replace this line with your code
 
+    """
+    Ex.
+    >>> longest_word_length(['hello','world'])
+    5
+    >>> longest_word_length(['jellyfish', 'zebra'])
+    9
+
+    """
+    longest = len(words[0])
+
+    for word in words:
+        if longest < len(word):
+            longest = len(word)
+
+    return longest
 
 def truncate(string):
-    pass  # TODO: replace this line with your code
+
+    """
+    Ex.
+    >>> truncate('aaaabbbbcccca')
+    'abca'
+    >>> truncate('hi***!!!! wooow')
+    'hi*! wow'
+
+    """
+
+    result = []
+
+    for char in string:
+        if len(result) == 0 or char != result[len(result) - 1]:
+            result.append(char)
+
+    return "".join(result) 
 
 
 def has_balanced_parens(string):
-    pass  # TODO: replace this line with your code
+
+
+    parens = 0
+
+    for char in string:
+        if char == '(':
+            parens += 1
+        elif char == ')':
+            parens -= 1
+
+        if parens < 0:
+            return False
+
+    return parens < 0;
 
 
 def compress(string):
-    pass  # TODO: replace this line with your code
+    """
+    Ex:
+    >>> compress('aabbaabb')
+    'a2b2a2b'
+    >>> compress('abc')
+    'abc'
+    >>> compress('Hello, world! Cows go moooo...')
+    'Hel2o, world! Cows go mo4.3'
+
+    """
+    compressed = []
+    curr_char = ''
+    char_count = 0
+    for char in string:
+        if char != curr_char:
+            compressed.append(curr_char)
+            if char_count > 1:
+                compressed.append(str(char_count))
+
+            curr_char = char
+            char_count = 0
+        char_count += 1
+
+    compressed.append(curr_char)
+    if char_count > 2:
+        compressed.append(str(char_count))
+
+    return "".join(compressed)
