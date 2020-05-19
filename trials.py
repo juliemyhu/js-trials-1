@@ -5,10 +5,10 @@ def output_all_items(items):
 
     """ 
     Ex:
-        >>> output_all_items([1, 'hello', True])
-        1
-        hello
-        True
+    >>> output_all_items([1, 'hello', True])
+    1
+    hello
+    True
 
     """
     for item in items:
@@ -17,8 +17,8 @@ def output_all_items(items):
 def get_all_evens(nums):
     """
     Ex:
-        >>> get_all_evens([7, 8, 10, 1, 2, 2])
-        [8, 2, 2]
+    >>> get_all_evens([7, 8, 10, 1, 2, 2])
+    [8, 2, 2]
 
 
     """
@@ -31,15 +31,49 @@ def get_all_evens(nums):
 
 
 def get_odd_indices(items):
-    pass  # TODO: replace this line with your code
+    """
+    Ex:
+    >>> get_odd_indices([1, 'hello', True, 500])
+    ['hello', 500]
 
+    """
+    result = []
+    for idx, i in enumerate(items):
+        if idx % 2 != 0:
+            result.append(i)
+
+    # for i in range(len(items)):
+    #     if i % 2 !=0:
+    #         result.append(i)
+
+    return result
 
 def print_as_numbered_list(items):
-    pass  # TODO: replace this line with your code
+    """
+    Ex:
+    >>> print_as_numbered_list([1, 'hello', True])
+    1. 1
+    2. hello
+    3. True
 
+    """
+    i = 1
+    for item in items:
+        print (f'{i}. {item}')
+        i += 1 
 
 def get_range(start, stop):
-    pass  # TODO: replace this line with your code
+    """
+    Ex: 
+    >>> get_range(0, 5)
+    [0, 1, 2, 3, 4]
+    
+    """
+    nums = []
+    for num in range (start, stop):
+        nums.append(num)
+    return nums
+
 
 
 def censor_vowels(word):
