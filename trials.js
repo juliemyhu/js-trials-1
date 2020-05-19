@@ -18,7 +18,7 @@ function outputAllItems(items) {
 //
 // Ex.:
 //   > getAllEvens([7, 8, 10, 1, 2, 2]);
-//   [8, 2, 2]
+//   [8, 10, 2, 2]
 function getAllEvens(nums) {
   const evenNums = [];
 

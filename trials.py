@@ -2,11 +2,32 @@
 
 
 def output_all_items(items):
-    pass  # TODO: replace this line with your code
 
+    """ 
+    Ex:
+        >>> output_all_items([1, 'hello', True])
+        1
+        hello
+        True
+
+    """
+    for item in items:
+        print(item)
 
 def get_all_evens(nums):
-    pass  # TODO: replace this line with your code
+    """
+    Ex:
+        >>> get_all_evens([7, 8, 10, 1, 2, 2])
+        [8, 2, 2]
+
+
+    """
+    even_nums = []
+    for num in nums:
+        if num % 2 == 0:
+            even_nums.append(num)
+
+    return even_nums
 
 
 def get_odd_indices(items):
